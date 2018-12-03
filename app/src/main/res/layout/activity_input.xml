@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".InputActivity">
+
+    <EditText
+        android:id="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Title"
+        android:inputType="textPersonName" />
+
+    <EditText
+        android:id="@+id/content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:ems="10"
+        android:gravity="top"
+        android:hint="Content"
+        android:inputType="textPersonName" />
+
+    <TableRow
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <ImageButton
+            android:id="@+id/happy"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:onClick="moodClicked"
+            android:scaleType="fitCenter"
+            android:textAlignment="textStart"
+            app:srcCompat="@drawable/happy" />
+
+        <ImageButton
+            android:id="@+id/sleep"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:onClick="moodClicked"
+            android:scaleType="fitCenter"
+            app:srcCompat="@drawable/sleep" />
+
+        <ImageButton
+            android:id="@+id/cry"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:onClick="moodClicked"
+            android:scaleType="fitCenter"
+            app:srcCompat="@drawable/cry" />
+
+        <ImageButton
+            android:id="@+id/dead"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:onClick="moodClicked"
+            android:scaleType="fitCenter"
+            app:srcCompat="@drawable/dead" />
+
+    </TableRow>
+
+    <Button
+        android:id="@+id/submit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="addEntry"
+        android:text="Submit entry" />
+
+</LinearLayout>
