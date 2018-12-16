@@ -5,12 +5,15 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:gravity="center"
     tools:context=".InputActivity">
 
     <EditText
         android:id="@+id/title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="2dp"
+        android:layout_marginRight="2dp"
         android:ems="10"
         android:hint="Title"
         android:inputType="textPersonName" />
@@ -19,6 +22,8 @@
         android:id="@+id/content"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="2dp"
+        android:layout_marginRight="2dp"
         android:layout_weight="1"
         android:ems="10"
         android:gravity="top"
@@ -36,6 +41,7 @@
             android:onClick="moodClicked"
             android:scaleType="fitCenter"
             android:textAlignment="textStart"
+            android:background="@drawable/buttonshape"
             app:srcCompat="@drawable/happy" />
 
         <ImageButton
@@ -44,6 +50,7 @@
             android:layout_height="100dp"
             android:onClick="moodClicked"
             android:scaleType="fitCenter"
+            android:background="@drawable/buttonshape"
             app:srcCompat="@drawable/sleep" />
 
         <ImageButton
@@ -51,6 +58,7 @@
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:onClick="moodClicked"
+            android:background="@drawable/buttonshape"
             android:scaleType="fitCenter"
             app:srcCompat="@drawable/cry" />
 
@@ -58,6 +66,7 @@
             android:id="@+id/dead"
             android:layout_width="100dp"
             android:layout_height="100dp"
+            android:background="@drawable/buttonshape"
             android:onClick="moodClicked"
             android:scaleType="fitCenter"
             app:srcCompat="@drawable/dead" />
@@ -66,9 +75,20 @@
 
     <Button
         android:id="@+id/submit"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"
+        android:background="@drawable/buttonshape"
         android:onClick="addEntry"
-        android:text="Submit entry" />
+        android:shadowColor="#A8A8A8"
+        android:shadowDx="0"
+        android:shadowDy="0"
+        android:shadowRadius="5"
+        android:text="Submit"
+        android:textAllCaps="false"
+        android:textColor="#FFFFFF"
+        android:textSize="30sp"
+        android:textStyle="normal" />
 
 </LinearLayout>

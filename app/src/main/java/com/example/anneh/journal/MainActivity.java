@@ -32,11 +32,13 @@ public class MainActivity extends AppCompatActivity {
         ListView listview = (ListView) findViewById(R.id.listview);
         listview.setAdapter(adapter);
 
+        // Set listeners
         listview.setOnItemClickListener(new ListViewClickListener());
         listview.setOnItemLongClickListener(new ListViewLongClickListener());
 
     }
 
+    // Start new journal entry when clicked
     public void actionClicked(View view) {
         /** continue to next activity */
 
@@ -44,37 +46,38 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+    // Go to clicked entry
     private class ListViewClickListener implements AdapterView.OnItemClickListener {
         @Override
         public void onItemClick(AdapterView<?> adapterView, View view, int position, long id) {
-            // fires an Intent to the third activity that shows the entry details
+
+            // Fires an Intent to the third activity that shows the entry details
             Intent intent = new Intent(MainActivity.this, DetailActivity.class);
 
             // Add the instance of Entry that was clicked
             Cursor clickedEntry = (Cursor) adapterView.getItemAtPosition(position);
 
+            // Pas corresponding title, timestamp and content to DetailActivity
             intent.putExtra("title", clickedEntry.getString(clickedEntry.getColumnIndex("title")));
-            intent.putExtra("mood", clickedEntry.getString(clickedEntry.getColumnIndex("mood")));
             intent.putExtra("timestamp", clickedEntry.getString(clickedEntry.getColumnIndex("timestamp")));
             intent.putExtra("content", clickedEntry.getString(clickedEntry.getColumnIndex("content")));
-
             startActivity(intent);
         }
     }
 
-    // delete item from listview
+    // Delete clicked entry
     private class ListViewLongClickListener implements AdapterView.OnItemLongClickListener {
         @Override
         public boolean onItemLongClick(AdapterView<?> adapterView, View view, int position, long id) {
 
-            // return item of type cursor (from adapter)
+            // Return item of type cursor (from adapter)
             Cursor cursor = (Cursor) adapterView.getItemAtPosition(position);
 
-            // get id from table entries in db
-            long id_= cursor.getLong(cursor.getColumnIndex("id"));
+            // Get id from table entries in db
+            long id_= cursor.getLong(cursor.getColumnIndex("_id"));
 
-            // delete id-column fromd database
-            db.delete(id_); // ????? ---> long id
+            // Delete id-column from database
+            db.delete(id);
             updateData();
             return true;
         }

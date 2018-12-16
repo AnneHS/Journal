@@ -22,7 +22,7 @@ public class InputActivity extends AppCompatActivity implements View.OnClickList
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_input);
 
-        // setOnClickListeners for mood buttons (https://stackoverflow.com/questions/25905086/multiple-buttons-onclicklistener-android)
+        // SetOnClickListeners for mood buttons (https://stackoverflow.com/questions/25905086/multiple-buttons-onclicklistener-android)
         ImageButton happy = (ImageButton) findViewById(R.id.happy);
         ImageButton sleep = (ImageButton) findViewById(R.id.sleep);
         ImageButton cry = (ImageButton) findViewById(R.id.cry);
@@ -37,7 +37,7 @@ public class InputActivity extends AppCompatActivity implements View.OnClickList
     @Override
     public void onClick(View view) {
 
-        // get mood
+        // Get mood
         switch (view.getId()) {
             case R.id.happy:
                 mood = "happy";
@@ -60,29 +60,33 @@ public class InputActivity extends AppCompatActivity implements View.OnClickList
 
     public void addEntry(View view) {
 
+        // Check if user has clicked mood
         if (moodclicked == false) {
             Toast.makeText(InputActivity.this, "enter mood", Toast.LENGTH_LONG).show();
         }
         else {
-
+            // Reset moodclicked for next entry
             moodclicked = false;
+
+            // Pass entry to database
             db = EntryDatabase.getInstance(getApplicationContext());
 
-            // title
+            // Title
             EditText title_ET = (EditText) findViewById(R.id.title);
             String title = title_ET.getText().toString();
 
-            // content
+            // Content
             EditText content_ET = (EditText) findViewById(R.id.content);
             String content = content_ET.getText().toString();
 
-            // timestamp * KAN OOK IN db
+            // Timestamp
             Date currentTime = Calendar.getInstance().getTime();
             String timestamp = currentTime.toString();
 
             JournalEntry entry = new JournalEntry(title, content, mood, timestamp);
             db.insert(entry);
 
+            // Return to MainActivity
             Intent intent = new Intent(InputActivity.this, MainActivity.class);
             startActivity(intent);
 

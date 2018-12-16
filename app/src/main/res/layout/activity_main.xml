@@ -9,17 +9,21 @@
     <ListView
         android:id="@+id/listview"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent"
+        android:layout_marginLeft="2dp"
+        android:layout_marginRight="2dp" />
 
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/floatingActionButton2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|end"
+        android:layout_margin="20dp"
         android:clickable="true"
         android:focusable="true"
         android:onClick="actionClicked"
         android:padding="20dp"
+        app:rippleColor="@color/design_default_color_primary_dark"
         app:srcCompat="@android:drawable/ic_input_add" />
 
 </android.support.design.widget.CoordinatorLayout>

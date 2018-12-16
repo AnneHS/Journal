@@ -12,8 +12,6 @@ public class EntryAdapter extends ResourceCursorAdapter {
 
     private EntryAdapter instance;
 
-    //  nprivate static EntryAdapter instance;
-
     // constructor
     public EntryAdapter(Context context, Cursor cursor) {
         super(context, R.layout.entry_row, cursor);
@@ -37,10 +35,11 @@ public class EntryAdapter extends ResourceCursorAdapter {
         tvTitle.setText(dbTitle);
         tvTimestamp.setText(dbTimestamp);
 
-        // Set image resource for mood
+        // Set image resource for mood and rotate image by 90 degrees
         // https://stackoverflow.com/questions/9551034/get-resource-image-by-name-into-custom-cursor-adapter
         int image_id = context.getResources().getIdentifier(dbMood, "drawable", context.getPackageName());
         ivMood.setImageResource(image_id);
+        ivMood.setRotation(90F);
         tvSummary.setText(dbMood);
     }
 }

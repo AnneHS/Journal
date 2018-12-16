@@ -14,16 +14,16 @@ public class EntryDatabase extends SQLiteOpenHelper {
     private static EntryDatabase instance;
     SQLiteDatabase db;
 
-    // constructor
+    // Constructor
     private EntryDatabase(@Nullable Context context, @Nullable String name, @Nullable SQLiteDatabase.CursorFactory factory, int version) {
         super(context, name, factory, version);
     }
 
+    // Getter
     public static EntryDatabase getInstance(Context context) {
 
         if (instance == null) {
-            return instance = new EntryDatabase(context, "entries_db" , null, 1);
-            // --> private instance variable
+            return instance = new EntryDatabase(context, "entries_db" , null, 2);
         }
         else {
             return instance;
@@ -33,30 +33,29 @@ public class EntryDatabase extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
 
-        // create entries table
+        // Create entries table
         String createTable = "CREATE TABLE entries(_id INTEGER PRIMARY KEY, title TEXT, content TEXT, mood TEXT, timestamp TEXT)";
         db.execSQL(createTable);
-        // db.execSQL("create table entries (id INTEGER PRIMARY KEY, title TEXT, content TEXT, mood TEXT, timestamp TEXT)");
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-        // Drop and recreate entries table
-        db.execSQL("DROP TABLE entries");
 
-        // call onCreate to start with clean slate?
+        // Drop and reload entries table
+        db.execSQL("DROP TABLE entries");
         onCreate(db);
     }
 
     public Cursor selectAll() {
-
+        // Get cursor for database
         SQLiteDatabase db  = this.getWritableDatabase();
         Cursor cursor = db.rawQuery("SELECT * FROM entries", null);
         return cursor;
     }
 
     public void insert(JournalEntry entry) {
-        //
+
+        // Insert entry into database
         SQLiteDatabase db = this.getWritableDatabase();
 
         ContentValues contentValues = new ContentValues();
@@ -66,15 +65,13 @@ public class EntryDatabase extends SQLiteOpenHelper {
         contentValues.put("timestamp", entry.timestamp);
 
         db.insert("entries", null, contentValues);
-        // db.close();
     }
 
     public void delete(long id) {
-        //
+
+        // Delete entry from database
         SQLiteDatabase db = this.getWritableDatabase();
         db.delete("entries", "_id = ?", new String[] {String.valueOf(id)});
-
-        // db.execSQL"DELETE FROM entries WHERE _id=JournalEntry.getId()");
     }
 
 }

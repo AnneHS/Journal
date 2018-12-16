@@ -9,16 +9,7 @@ public class JournalEntry implements Serializable {
     public String mood;               // drawable id?
     public String timestamp;
 
-    // constructor
-    public JournalEntry(int id, String title, String content, String mood, String timestamp) {
-        this.id = id;
-        this.title = title;
-        this.content = content;
-        this.mood = mood;
-        this.timestamp = timestamp;
-    }
-
-    // constructor 2
+    // Constructor
     public JournalEntry(String title, String content, String mood, String timestamp) {
         this.title = title;
         this.content = content;
@@ -26,7 +17,7 @@ public class JournalEntry implements Serializable {
         this.timestamp = timestamp;
     }
 
-    // getter
+    // Getters
     public int getId() {
         return id;
     }
@@ -47,6 +38,8 @@ public class JournalEntry implements Serializable {
         return timestamp;
     }
 
+
+    // Setters
     public void setId(int id) {
         this.id = id;
     }
@@ -66,8 +59,5 @@ public class JournalEntry implements Serializable {
     public void setTimestamp(String timestamp) {
         this.timestamp = timestamp;
     }
-
-    // DateTime
-
 
 }

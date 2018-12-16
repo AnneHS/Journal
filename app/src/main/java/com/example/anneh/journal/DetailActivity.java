@@ -16,19 +16,15 @@ public class DetailActivity extends AppCompatActivity {
 
         Intent intent = getIntent();
         String title = (String) intent.getSerializableExtra("title");
-        // String mood = (String) intent.getSerializableExtra("mood");
         String timestamp = (String) intent.getSerializableExtra("timestamp");
         String content = (String) intent.getSerializableExtra("content");
 
         TextView titleTV = (TextView) findViewById(R.id.title_detail);
         TextView timestampTV = (TextView) findViewById(R.id.timestamp_detail);
         TextView contentTV = (TextView) findViewById(R.id.content_detail);
-        // ImageView moodIV = (ImageView) findViewById(R.id.mood);
 
         titleTV.setText(title);
         timestampTV.setText(timestamp);
         contentTV.setText(content);
-        // mood
-
     }
 }
