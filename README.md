@@ -11,3 +11,11 @@
  ![main](app/doc/main.PNG) 
 ![entry](app/doc/entry.PNG)
 ![detail](app/doc/detail.PNG)
+
+<p align="center">
+  <img src="https://github.com/AnneHS/Journal/blob/master/app/doc/mainscreen.png" height="5%" width="24%"/> <img
+  img src="https://github.com/AnneHS/Journal/blob/master/app/doc/entryscreen.png" height="5%" width="24%"/> <img
+  img src="https://github.com/AnneHS/Journal/blob/master/app/doc/submit.png" height="5%" width="24%"/> 
+  
+  <img src="https://github.com/AnneHS/Journal/blob/master/app/doc/landscape.png" height="20%" width="50%"/> 
+</p>
