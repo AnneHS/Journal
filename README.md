@@ -1,4 +1,4 @@
-## Journal(Android App)
+## Journal (Android App)
 
 
 *Anne Hoogerduijn Strating*
@@ -7,7 +7,11 @@
 
  An app that represents a journal. In this app, you are able to view a list of your journal entries, 
  and of course also add new ones. 
- 
- ![main](app/doc/main.PNG) 
-![entry](app/doc/entry.PNG)
-![detail](app/doc/detail.PNG)
+
+<p align="center">
+  <img src="https://github.com/AnneHS/Journal/blob/master/app/doc/mainscreen.png" height="5%" width="24%"/> <img
+  img src="https://github.com/AnneHS/Journal/blob/master/app/doc/entryscreen.png" height="5%" width="24%"/> <img
+  img src="https://github.com/AnneHS/Journal/blob/master/app/doc/submit.png" height="5%" width="24%"/> 
+  
+  <img src="https://github.com/AnneHS/Journal/blob/master/app/doc/lanscape.png" height="20%" width="50%"/> 
+</p>
