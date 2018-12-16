@@ -1,4 +1,4 @@
-## Journal(Android App)
+## Journal (Android App)
 
 
 *Anne Hoogerduijn Strating*
