@@ -23,6 +23,7 @@
         android:focusable="true"
         android:onClick="actionClicked"
         android:padding="20dp"
+        app:backgroundTint="#1565c0"
         app:rippleColor="@color/design_default_color_primary_dark"
         app:srcCompat="@android:drawable/ic_input_add" />
 
